@@ -1,0 +1,75 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr
+
+\f0\fs24 \cf0 Billy Barbaro\
+11/7/13\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc
+\cf0 \ul \ulc0 Project 3 Testing Report\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \ulnone 1.  Constructors\
+\
+The calls to both constructors work as expected and generate the expected grids.  These grids appear to work throughout the game.  The number of rows is limited between 1 and 8, the number of columns between 1 and 14, and the number of tiles between 1 and 8.\
+\
+2.  actionPerformed\
+\
+This could not be tested using JUnit.  Print line debugging showed this method was called upon clicking on a button and also identified the correct button.  The program appear to pass the right call depending on if it is the first or second button selected.\
+\
+3.  firstSelect\
+\
+This method could not be tested in JUnit because the fields are private.  So instead, the variables firstSelectedRow and firstSelectedColumn were monitored in the debugger and confirmed to change to the values corresponding to the button clicked.\
+\
+4.  secondSelect\
+\
+Although this method was not tested using JUnit, it is more of a clearinghouse to call the other methods based on given conditions.  Gameplay showed that it called the correct methods.  Therefore, as long as the methods it calls pass the tests, so does it.\
+\
+5.  spotsTouch\
+\
+This was called by passing in the coordinates of two tiles in JUnit.  All cases returned the expected output.\
+\
+6.  upMatch\
+\
+Using JUnit testing, a grid of red tiles was passed in.  Then upMatch was called on the bottom, middle, and top tile of a column, testing the first, middle, and last index of the column, and each iterating 0 times, 1 time, and many times.  It passed the given cases.\
+\
+7.  downMatch\
+\
+Using JUnit testing, a grid of red tiles was passed in.  Then downMatch was called on the bottom, middle, and top tile of a column, testing the first, middle, and last index of the column, and each iterating 0 times, 1 time, and many times.  It passed the given cases.\
+\
+8.  leftMatch\
+\
+Using JUnit testing, a grid of red tiles was passed in.  Then leftMatch was called on the leftmost, middle, and rightmost tile of a row, testing the first, middle, and last index of the row, and each iterating 0 times, 1 time, and many times.  It passed the given cases.\
+\
+9.  rightMatch\
+\
+Using JUnit testing, a grid of red tiles was passed in.  Then rightMatch was called on the leftmost, middle, and rightmost tile of a row, testing the first, middle, and last index of the row, and each iterating 0 times, 1 time, and many times.  It passed the given cases.\
+\
+10.  markHorizontal\
+\
+Using JUnit, the bottom row of a 3x3 grid was marked staring at the center, left, and right tiles and compared to a grid with the bottom three tiles marked.  The instances of 0 and 1 tiles are never passed to the method.  Each behaved as expected.\
+\
+11.  markVertical\
+\
+Using JUnit, the bottom row of a 3x3 grid was marked staring at the center, top, and bottom tiles and compared to a grid with the bottom three tiles marked.   The instances of 0 and 1 tiles are never passed to the method.  Each behaved as expected.\
+\
+12.  fallHorizontal\
+\
+Using JUnit, a 3x3 grid of white tiles was passed to the method.  First the middle line was replaced and checked against another grid of all white tiles.  Because the board is only set to replace 4 colors, it will not use white.  So this was checked against the white board, seeing that the top row did not match and the bottom two did.  This was repeated, but this time the top board was removed.  The case of removing 0 or 1 tile never occurs in the game.  The tests returned expected values.\
+\
+13.  fallVertical\
+\
+Using JUnit, a 3x3 grid of white tiles was passed to the method.  First the first column was replaced and checked against another grid of all white tiles.  Because the board is only set to replace 4 colors, it will not use white.  So this was checked against the white board, seeing that the first column did not match and the right two did.  This was repeated, but this time a different center was passed in.  The case of removing 0 or 1 tile never occurs in the game.  The tests returned expected values.\
+\
+14.  switchJewels\
+\
+This was tested using JUnit in a grid of 4 tiles.  The tests match the expected outputs.\
+\
+15.  checkWin\
+\
+This was tested with 0 marked tiles, 1 marked tile, and all marked tiles, as well as marking tiles at various indices.  The JUnit tests returned as expected.\
+\
+16.  Main Method\
+\
+This method calls the expected constructors.}
